@@ -1,0 +1,60 @@
+{
+  "name": "dev-setup",
+  "version": "1.0.0",
+  "description": "A CLI tool to quickly install common developer tools on any OS",
+  "main": "index.js",
+  "bin": {
+    "dev-setup": "./index.js"
+  },
+  "scripts": {
+    "start":        "node index.js",
+    "test":         "jest --coverage",
+    "test:watch":   "jest --watch",
+    "test:verbose": "jest --verbose --coverage",
+    "lint":         "eslint src/ index.js tests/"
+  },
+  "keywords": [
+    "cli", "developer-tools", "setup", "automation",
+    "devops", "nodejs", "cross-platform", "mern", "spring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk":     "^4.1.2",
+    "inquirer":  "^8.2.6",
+    "ora":       "^5.4.1",
+    "commander": "^11.0.0",
+    "execa":     "^5.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "jest":   "^29.7.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/tests/**/*.test.js"],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines":      70,
+        "functions":  70,
+        "branches":   60,
+        "statements": 70
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/dev-setup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/dev-setup/issues"
+  },
+  "homepage": "https://github.com/YOUR_USERNAME/dev-setup#readme"
+}

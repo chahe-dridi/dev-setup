@@ -1,0 +1,626 @@
+{
+  "_comment": "Master list of all installable tools. Each tool must have a matching case in the OS scripts.",
+  "_howToAdd": "1. Add your tool object here following the schema below. 2. Add install commands in each OS script under scripts/. 3. Submit a PR!",
+  "_schema": {
+    "name":            "string — the key used in scripts (lowercase, no spaces)",
+    "label":           "string — human-readable display name shown in the CLI menu",
+    "description":     "string — one sentence explaining what the tool is and why a developer would want it",
+    "whyUseIt":        "string — a second sentence explaining the main benefit or use case",
+    "defaultSelected": "boolean — true = pre-checked in the interactive menu",
+    "category":        "string — core | runtime | editor | ide | framework | cli | devops | cloud | database | testing | mobile",
+    "tags":            "string[] — keywords for future filtering feature",
+    "website":         "string — official website URL",
+    "os": {
+      "windows": "boolean",
+      "mac":     "boolean",
+      "ubuntu":  "boolean",
+      "kali":    "boolean"
+    }
+  },
+
+  "categories": {
+    "core":      "Essential tools every developer needs from day one",
+    "runtime":   "Language runtimes and version managers",
+    "editor":    "Lightweight terminal-based text editors",
+    "ide":       "Full-featured Integrated Development Environments",
+    "framework": "Language frameworks and SDKs for building applications",
+    "cli":       "Command-line utilities that improve your terminal workflow",
+    "devops":    "Tools for containers, orchestration, and infrastructure",
+    "cloud":     "Cloud provider CLIs for AWS, GCP, and Azure",
+    "database":  "Database engines and management tools",
+    "testing":   "Testing frameworks and code quality tools",
+    "mobile":    "SDKs and tools for iOS and Android development"
+  },
+
+  "tools": [
+
+    {
+      "name": "git",
+      "label": "Git",
+      "description": "The world's most widely used distributed version control system — tracks every change to your code across time.",
+      "whyUseIt": "Without Git you cannot collaborate, roll back mistakes, or contribute to any open-source project on GitHub or GitLab.",
+      "defaultSelected": true,
+      "category": "core",
+      "tags": ["vcs", "version control", "source control", "github", "gitlab"],
+      "website": "https://git-scm.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "gh",
+      "label": "GitHub CLI",
+      "description": "GitHub's official command-line tool — create PRs, review issues, clone repos, and manage releases without leaving your terminal.",
+      "whyUseIt": "Eliminates constant browser switching and lets you script GitHub workflows in CI or automation scripts.",
+      "defaultSelected": false,
+      "category": "core",
+      "tags": ["github", "pull request", "cli", "git"],
+      "website": "https://cli.github.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "curl",
+      "label": "curl",
+      "description": "A command-line HTTP client that transfers data to and from servers — the swiss army knife for testing APIs and downloading files.",
+      "whyUseIt": "Used in almost every install script and API test; you will find curl commands in nearly every piece of developer documentation.",
+      "defaultSelected": true,
+      "category": "core",
+      "tags": ["http", "api", "download", "network"],
+      "website": "https://curl.se",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "wget",
+      "label": "wget",
+      "description": "A non-interactive network file downloader that supports HTTP, HTTPS, and FTP — great for downloading large files or entire websites.",
+      "whyUseIt": "Unlike curl, wget can resume interrupted downloads and mirror directory trees, making it ideal for automated file retrieval.",
+      "defaultSelected": false,
+      "category": "core",
+      "tags": ["download", "http", "ftp", "network"],
+      "website": "https://www.gnu.org/software/wget",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "nodejs",
+      "label": "Node.js (LTS)",
+      "description": "A JavaScript runtime built on Chrome's V8 engine that lets you run JavaScript server-side — comes bundled with npm, the world's largest package registry.",
+      "whyUseIt": "Required for any JavaScript or TypeScript project, front-end tooling (Webpack, Vite, ESLint), and back-end APIs built with Express, Fastify, or NestJS.",
+      "defaultSelected": true,
+      "category": "runtime",
+      "tags": ["javascript", "npm", "server", "backend", "frontend", "fullstack"],
+      "website": "https://nodejs.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "nvm",
+      "label": "NVM — Node Version Manager",
+      "description": "Lets you install and switch between multiple versions of Node.js on the same machine without conflicts.",
+      "whyUseIt": "Essential when working on multiple projects that require different Node versions — run `nvm use 18` to switch instantly.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["nodejs", "version manager", "javascript"],
+      "website": "https://github.com/nvm-sh/nvm",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "python3",
+      "label": "Python 3",
+      "description": "A versatile, beginner-friendly programming language used in web development, data science, machine learning, scripting, and automation.",
+      "whyUseIt": "Python is the most popular language for AI/ML projects (TensorFlow, PyTorch), data analysis (Pandas, NumPy), and general-purpose scripting.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["python", "ml", "ai", "data science", "scripting", "automation"],
+      "website": "https://python.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "java",
+      "label": "Java JDK 21 (LTS)",
+      "description": "Oracle's long-term-support Java Development Kit — provides the compiler, runtime, and standard library for building Java applications.",
+      "whyUseIt": "Required for Spring Boot, Android development, and any enterprise Java project — JDK 21 is the current LTS release and introduces virtual threads.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["java", "jdk", "jvm", "spring", "android", "enterprise"],
+      "website": "https://adoptium.net",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "dotnet",
+      "label": ".NET SDK",
+      "description": "Microsoft's free, open-source, cross-platform framework for building web apps, desktop apps, mobile apps, games, and microservices with C# or F#.",
+      "whyUseIt": "Required for any C# project — includes ASP.NET Core for REST APIs, Blazor for web UIs, and MAUI for cross-platform desktop/mobile apps.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": [".net", "csharp", "c#", "asp.net", "microsoft", "blazor", "maui"],
+      "website": "https://dotnet.microsoft.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "go",
+      "label": "Go (Golang)",
+      "description": "Google's statically typed, compiled language — famous for its simplicity, fast compilation, and built-in concurrency with goroutines.",
+      "whyUseIt": "The language behind Docker, Kubernetes, and Terraform — excellent for building high-performance CLI tools, microservices, and cloud infrastructure.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["golang", "google", "concurrency", "cloud", "microservices", "cli"],
+      "website": "https://go.dev",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "rust",
+      "label": "Rust",
+      "description": "A systems programming language focused on memory safety, zero-cost abstractions, and fearless concurrency — no garbage collector required.",
+      "whyUseIt": "Adopted for performance-critical code, WebAssembly, and as a safer replacement for C/C++ — powering tools like ripgrep, fd, and exa.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["rust", "systems", "wasm", "performance", "memory safety"],
+      "website": "https://www.rust-lang.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "ruby",
+      "label": "Ruby",
+      "description": "A dynamic, expressive, object-oriented scripting language famous for its clean syntax and developer happiness.",
+      "whyUseIt": "The language behind Ruby on Rails — still widely used in startups and enterprise web apps, and required for mobile CI/CD tools like Fastlane.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["ruby", "rails", "web", "scripting", "fastlane"],
+      "website": "https://www.ruby-lang.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "php",
+      "label": "PHP 8",
+      "description": "A widely-used server-side scripting language that powers over 75% of the web — the backbone of WordPress, Laravel, and Symfony.",
+      "whyUseIt": "Essential for WordPress development and building REST APIs with Laravel — PHP 8+ introduced JIT compilation, match expressions, and fibers.",
+      "defaultSelected": false,
+      "category": "runtime",
+      "tags": ["php", "laravel", "wordpress", "web", "server", "symfony"],
+      "website": "https://www.php.net",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "vscode",
+      "label": "Visual Studio Code",
+      "description": "Microsoft's free, lightweight, enormously popular code editor with built-in Git, IntelliSense auto-complete, a debugger, and a huge extension marketplace.",
+      "whyUseIt": "The number one editor used by developers worldwide — extensions cover every language, framework, linter, formatter, and remote development scenario imaginable.",
+      "defaultSelected": true,
+      "category": "ide",
+      "tags": ["editor", "microsoft", "ide", "extensions", "intellisense", "debug"],
+      "website": "https://code.visualstudio.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "intellij",
+      "label": "IntelliJ IDEA Community",
+      "description": "JetBrains' powerful Java and Kotlin IDE with deep code understanding, advanced refactoring tools, built-in Maven/Gradle support, and integrated debugging.",
+      "whyUseIt": "The gold-standard IDE for Java and Spring Boot development — its intelligent code inspection catches bugs before you even run the app.",
+      "defaultSelected": false,
+      "category": "ide",
+      "tags": ["java", "kotlin", "spring", "jetbrains", "ide", "gradle", "maven"],
+      "website": "https://www.jetbrains.com/idea",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    },
+
+    {
+      "name": "pycharm",
+      "label": "PyCharm Community",
+      "description": "JetBrains' dedicated Python IDE with intelligent code completion, a built-in debugger, virtual environment management, and Django/Flask support.",
+      "whyUseIt": "Makes Python development dramatically more productive — automatically finds import errors, manages virtual environments, and integrates pytest out of the box.",
+      "defaultSelected": false,
+      "category": "ide",
+      "tags": ["python", "django", "flask", "jetbrains", "ide", "ml", "ai"],
+      "website": "https://www.jetbrains.com/pycharm",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    },
+
+    {
+      "name": "webstorm",
+      "label": "WebStorm",
+      "description": "JetBrains' JavaScript and TypeScript IDE with deep framework support for React, Vue, Angular, and Node.js — includes built-in linting and test runners.",
+      "whyUseIt": "The most intelligent JS/TS IDE available — understands your entire codebase to provide accurate refactoring and auto-complete across large projects.",
+      "defaultSelected": false,
+      "category": "ide",
+      "tags": ["javascript", "typescript", "react", "vue", "angular", "jetbrains"],
+      "website": "https://www.jetbrains.com/webstorm",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    },
+
+    {
+      "name": "vim",
+      "label": "Vim",
+      "description": "The legendary terminal-based modal text editor — edit files at keyboard speed once you learn its motion commands.",
+      "whyUseIt": "Available on every Unix system by default — essential for editing files over SSH on remote servers where no GUI is available.",
+      "defaultSelected": false,
+      "category": "editor",
+      "tags": ["editor", "terminal", "modal", "unix", "server"],
+      "website": "https://vim.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "neovim",
+      "label": "Neovim",
+      "description": "A modernised, community-driven fork of Vim with Lua configuration, a built-in LSP client for code intelligence, async operations, and a rich plugin ecosystem.",
+      "whyUseIt": "All the power of Vim with modern IDE features — native code completion, inline diagnostics, Treesitter syntax highlighting, and Telescope fuzzy finding.",
+      "defaultSelected": false,
+      "category": "editor",
+      "tags": ["editor", "vim", "lua", "lsp", "terminal"],
+      "website": "https://neovim.io",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "docker",
+      "label": "Docker",
+      "description": "A containerisation platform that packages your app and all its dependencies into a portable, isolated container that runs identically on any machine.",
+      "whyUseIt": "Eliminates 'works on my machine' problems — spin up databases, services, and entire dev environments with a single command and tear them down just as fast.",
+      "defaultSelected": true,
+      "category": "devops",
+      "tags": ["containers", "devops", "microservices", "compose", "kubernetes"],
+      "website": "https://docker.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "kubectl",
+      "label": "kubectl — Kubernetes CLI",
+      "description": "The command-line tool for controlling Kubernetes clusters — deploy apps, inspect pods, view logs, and manage cluster configuration from your terminal.",
+      "whyUseIt": "The primary interface for any developer working with Kubernetes — required for deploying to EKS, GKE, AKS, or any self-hosted cluster.",
+      "defaultSelected": false,
+      "category": "devops",
+      "tags": ["kubernetes", "k8s", "containers", "devops", "cloud"],
+      "website": "https://kubernetes.io/docs/reference/kubectl",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "terraform",
+      "label": "Terraform",
+      "description": "HashiCorp's Infrastructure as Code tool — define your entire cloud infrastructure in declarative config files and provision it with one command.",
+      "whyUseIt": "Replaces clicking through cloud dashboards — version-control, review, and reproduce your infrastructure identically across dev, staging, and production.",
+      "defaultSelected": false,
+      "category": "devops",
+      "tags": ["iac", "infrastructure", "hashicorp", "aws", "gcp", "azure", "devops"],
+      "website": "https://terraform.io",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "ansible",
+      "label": "Ansible",
+      "description": "An agentless IT automation tool that configures servers, deploys applications, and orchestrates multi-tier workflows using human-readable YAML playbooks.",
+      "whyUseIt": "Write a playbook once and replay it identically on 1 server or 1000 — no agents to install, just SSH access and Python on the target machine.",
+      "defaultSelected": false,
+      "category": "devops",
+      "tags": ["automation", "configuration", "devops", "yaml", "agentless", "servers"],
+      "website": "https://www.ansible.com",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "awscli",
+      "label": "AWS CLI v2",
+      "description": "Amazon's official command-line interface for interacting with over 200 AWS services — manage S3, EC2, Lambda, RDS, and more from your terminal.",
+      "whyUseIt": "Enables scripted AWS workflows, automated deployments, and is required by tools like AWS SAM CLI, CDK, and the Serverless Framework.",
+      "defaultSelected": false,
+      "category": "cloud",
+      "tags": ["aws", "amazon", "cloud", "s3", "ec2", "lambda", "devops"],
+      "website": "https://aws.amazon.com/cli",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "gcloud",
+      "label": "Google Cloud CLI",
+      "description": "Google's official CLI for interacting with GCP services — manage Compute Engine, Cloud Run, GKE, BigQuery, and more from the terminal.",
+      "whyUseIt": "Required for deploying to Google Cloud and integrating with GCP services like Firebase, Pub/Sub, and Google Kubernetes Engine.",
+      "defaultSelected": false,
+      "category": "cloud",
+      "tags": ["gcp", "google", "cloud", "firebase", "kubernetes", "bigquery"],
+      "website": "https://cloud.google.com/sdk",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "azure-cli",
+      "label": "Azure CLI",
+      "description": "Microsoft's command-line tool for managing Azure resources — deploy apps, manage VMs, configure networking, and automate Azure workflows.",
+      "whyUseIt": "Essential for any developer deploying .NET applications, containers, or serverless functions to Microsoft Azure cloud services.",
+      "defaultSelected": false,
+      "category": "cloud",
+      "tags": ["azure", "microsoft", "cloud", ".net", "devops", "arm"],
+      "website": "https://learn.microsoft.com/en-us/cli/azure",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "mongodb",
+      "label": "MongoDB Community",
+      "description": "A leading NoSQL document database that stores data as flexible JSON-like BSON documents — scales horizontally and integrates naturally with JavaScript.",
+      "whyUseIt": "The 'M' in the MERN stack — pairs naturally with Node.js and Express for full-stack JavaScript apps with dynamic, schema-less data structures.",
+      "defaultSelected": false,
+      "category": "database",
+      "tags": ["nosql", "document", "mern", "json", "database", "javascript", "atlas"],
+      "website": "https://www.mongodb.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "postgresql",
+      "label": "PostgreSQL",
+      "description": "A powerful, open-source relational database known for ACID compliance, advanced data types (JSON, arrays, UUID), full-text search, and excellent performance.",
+      "whyUseIt": "The most feature-rich open-source SQL database — used by Heroku, Supabase, and countless production systems; its JSON support makes it nearly NoSQL-capable too.",
+      "defaultSelected": false,
+      "category": "database",
+      "tags": ["sql", "relational", "postgres", "database", "supabase", "acid", "json"],
+      "website": "https://www.postgresql.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "mysql",
+      "label": "MySQL",
+      "description": "The world's most popular open-source relational database — fast, reliable, and the default database for LAMP/MAMP stacks, WordPress, and many legacy apps.",
+      "whyUseIt": "Required for countless legacy and modern web apps — if you are working with PHP/Laravel, WordPress, or older Rails applications, you will likely need MySQL.",
+      "defaultSelected": false,
+      "category": "database",
+      "tags": ["sql", "relational", "database", "lamp", "wordpress", "laravel", "php"],
+      "website": "https://www.mysql.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "redis",
+      "label": "Redis",
+      "description": "An in-memory key-value data store used as a cache, message broker, and session store — lightning-fast because all data lives in RAM.",
+      "whyUseIt": "Dramatically speeds up web apps by caching expensive database queries, and powers features like rate limiting, real-time leaderboards, and job queues (BullMQ).",
+      "defaultSelected": false,
+      "category": "database",
+      "tags": ["cache", "memory", "keyvalue", "queue", "session", "pubsub", "bullmq"],
+      "website": "https://redis.io",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "angular-cli",
+      "label": "Angular CLI (@angular/cli)",
+      "description": "The official command-line interface for Angular — scaffolds components, services, and modules, and runs the dev server, linter, and test runner with `ng` commands.",
+      "whyUseIt": "Angular projects are complex to configure by hand — the CLI enforces Angular's opinionated architecture, generates boilerplate instantly, and manages upgrades between major versions.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["angular", "typescript", "frontend", "spa", "google", "enterprise", "rxjs"],
+      "website": "https://angular.io/cli",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "create-react-app",
+      "label": "Create React App",
+      "description": "Facebook's official zero-config React scaffolder — sets up Webpack, Babel, ESLint, and Jest automatically so you can start building immediately.",
+      "whyUseIt": "The fastest way to start a React project without spending hours on build tooling — the 'R' in the MERN stack alongside MongoDB, Express, and Node.js.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["react", "frontend", "spa", "mern", "javascript", "facebook", "webpack"],
+      "website": "https://create-react-app.dev",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "vite",
+      "label": "Vite",
+      "description": "A next-generation front-end build tool that uses native ES modules for near-instant dev server startup and blazing-fast Hot Module Replacement.",
+      "whyUseIt": "Starts a dev server in milliseconds regardless of project size — supports React, Vue, Svelte, and vanilla JS/TS and is rapidly replacing Create React App.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["build tool", "frontend", "react", "vue", "svelte", "hmr", "fast", "esm"],
+      "website": "https://vitejs.dev",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "nextjs",
+      "label": "Next.js (create-next-app)",
+      "description": "The React framework for production — adds server-side rendering, static site generation, file-based routing, image optimisation, and API routes on top of React.",
+      "whyUseIt": "The go-to choice for production React apps that need SEO, performance, and a full-stack back-end API in the same codebase — deployed easily on Vercel.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["react", "ssr", "ssg", "fullstack", "vercel", "typescript", "frontend"],
+      "website": "https://nextjs.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "express",
+      "label": "Express.js",
+      "description": "The minimalist, unopinionated Node.js web framework — provides routing, middleware chaining, and HTTP utilities for building REST APIs and web servers.",
+      "whyUseIt": "The 'E' in both MERN and MEAN stacks — the most popular way to build Node.js back-ends, with a massive ecosystem of plug-and-play middleware.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["nodejs", "backend", "api", "rest", "mern", "mean", "middleware"],
+      "website": "https://expressjs.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "spring-cli",
+      "label": "Spring Boot CLI",
+      "description": "The command-line tool for bootstrapping and running Spring Boot applications — quickly scaffold new projects with chosen dependencies from your terminal.",
+      "whyUseIt": "Skips the Spring Initializr web UI — generate Spring Boot projects with REST, JPA, Security, and more directly from the terminal in seconds.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["java", "spring", "springboot", "backend", "api", "enterprise", "microservices"],
+      "website": "https://spring.io/projects/spring-boot",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "maven",
+      "label": "Apache Maven",
+      "description": "Java's most widely used build automation and dependency management tool — defines project structure and third-party dependencies in a pom.xml file.",
+      "whyUseIt": "Required for most Java and Spring projects — downloads dependencies from Maven Central, compiles code, runs tests, and packages your app into a JAR or WAR.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["java", "build", "dependency", "spring", "enterprise", "pom", "jar"],
+      "website": "https://maven.apache.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "gradle",
+      "label": "Gradle",
+      "description": "A flexible, fast build automation tool for Java, Kotlin, and Android projects — uses a Groovy or Kotlin DSL instead of verbose XML.",
+      "whyUseIt": "Faster than Maven for large projects thanks to incremental builds and build caching — the default build tool for Android and increasingly preferred for Spring apps.",
+      "defaultSelected": false,
+      "category": "framework",
+      "tags": ["java", "kotlin", "android", "build", "automation", "groovy", "dsl"],
+      "website": "https://gradle.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "zsh",
+      "label": "Zsh (Z Shell)",
+      "description": "An extended Bash-compatible shell with smarter tab completion, spelling correction, glob patterns, and a highly customisable prompt.",
+      "whyUseIt": "The default shell on macOS since Catalina — pair it with Oh My Zsh and plugins like zsh-autosuggestions to supercharge your terminal productivity.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["shell", "terminal", "bash", "productivity", "macos"],
+      "website": "https://zsh.sourceforge.io",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "ohmyzsh",
+      "label": "Oh My Zsh",
+      "description": "A community-driven framework for managing Zsh configuration — includes 300+ plugins (git, docker, kubectl) and 150+ themes out of the box.",
+      "whyUseIt": "Installing the git plugin alone — which shows your current branch and dirty status in the prompt — makes it completely worth it; the terminal experience is transformed.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["zsh", "shell", "plugins", "themes", "productivity", "terminal"],
+      "website": "https://ohmyz.sh",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "tmux",
+      "label": "tmux — Terminal Multiplexer",
+      "description": "Splits your terminal into multiple panes, lets you create named windows, and keeps sessions alive so they survive SSH disconnects.",
+      "whyUseIt": "Run your dev server, test watcher, and git log side-by-side in a single window — and long-running processes stay alive even after closing your laptop lid.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["terminal", "multiplexer", "productivity", "ssh", "sessions", "panes"],
+      "website": "https://github.com/tmux/tmux",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "htop",
+      "label": "htop",
+      "description": "A colourful, interactive terminal process viewer showing CPU, memory, and process trees in real time — a massive upgrade over the plain `top` command.",
+      "whyUseIt": "Instantly see what is eating your CPU or RAM, sort processes by resource usage, and kill runaway processes — all from the keyboard without leaving the terminal.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["monitoring", "processes", "cpu", "memory", "terminal", "sysadmin"],
+      "website": "https://htop.dev",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "jq",
+      "label": "jq — JSON Processor",
+      "description": "A lightweight, flexible command-line JSON processor — parse, filter, transform, and format JSON from API responses or log files with a simple query syntax.",
+      "whyUseIt": "Essential for working with REST API responses in shell scripts — pipe curl output into `jq '.users[0].name'` to extract exactly the field you need.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["json", "api", "parsing", "scripting", "rest", "curl", "filtering"],
+      "website": "https://stedolan.github.io/jq",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "make",
+      "label": "Make",
+      "description": "A classic Unix build automation tool that reads a Makefile to run named commands — widely used as a simple project task runner.",
+      "whyUseIt": "A Makefile acts as a self-documenting list of project commands — type `make test` or `make docker-up` instead of memorising long CLI invocations.",
+      "defaultSelected": false,
+      "category": "cli",
+      "tags": ["build", "automation", "scripting", "makefile", "unix", "tasks"],
+      "website": "https://www.gnu.org/software/make",
+      "os": { "windows": false, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "jest",
+      "label": "Jest",
+      "description": "Facebook's all-in-one JavaScript testing framework with a built-in test runner, assertion library, powerful mocking system, and code coverage reports.",
+      "whyUseIt": "The default testing solution for React, Next.js, and Node.js projects — zero configuration needed and snapshot testing makes UI regression testing trivial.",
+      "defaultSelected": false,
+      "category": "testing",
+      "tags": ["testing", "unit test", "javascript", "react", "node", "coverage", "mocking", "snapshot"],
+      "website": "https://jestjs.io",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "pytest",
+      "label": "pytest",
+      "description": "Python's most popular testing framework — discovers and runs tests automatically, supports clean assertions without boilerplate, and extends via 300+ plugins.",
+      "whyUseIt": "Far less boilerplate than Python's built-in unittest — fixtures, parametrize decorators, and the pytest-cov plugin make it the standard choice for Python projects.",
+      "defaultSelected": false,
+      "category": "testing",
+      "tags": ["testing", "python", "unit test", "fixtures", "coverage", "parametrize"],
+      "website": "https://pytest.org",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": true }
+    },
+
+    {
+      "name": "postman",
+      "label": "Postman",
+      "description": "A GUI API platform for building, testing, documenting, and monitoring REST, GraphQL, and SOAP APIs — with a collection runner and JavaScript test scripting.",
+      "whyUseIt": "The industry standard for API testing — test endpoints visually, write automated test suites, generate API documentation, and share collections with your team.",
+      "defaultSelected": false,
+      "category": "testing",
+      "tags": ["api", "rest", "testing", "graphql", "http", "documentation", "collections"],
+      "website": "https://www.postman.com",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    },
+
+    {
+      "name": "flutter",
+      "label": "Flutter SDK",
+      "description": "Google's open-source UI toolkit for building natively compiled apps for mobile, web, and desktop from a single Dart codebase.",
+      "whyUseIt": "Write once, deploy to iOS, Android, Web, macOS, Windows, and Linux — Flutter's widget system produces beautiful 60/120fps UIs with no JavaScript bridge overhead.",
+      "defaultSelected": false,
+      "category": "mobile",
+      "tags": ["mobile", "ios", "android", "dart", "google", "cross-platform", "ui", "widget"],
+      "website": "https://flutter.dev",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    },
+
+    {
+      "name": "android-studio",
+      "label": "Android Studio",
+      "description": "Google's official IDE for Android development — includes the Android SDK, AVD emulator, Layout Editor, APK analyser, and Gradle build system integration.",
+      "whyUseIt": "The only fully supported IDE for native Android development — the emulator lets you test your app on any screen size and Android version without physical hardware.",
+      "defaultSelected": false,
+      "category": "mobile",
+      "tags": ["android", "mobile", "kotlin", "java", "google", "ide", "sdk", "emulator"],
+      "website": "https://developer.android.com/studio",
+      "os": { "windows": true, "mac": true, "ubuntu": true, "kali": false }
+    }
+
+  ]
+}
