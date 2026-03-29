@@ -29,6 +29,7 @@ program
   .version(VERSION)
   .option('-y, --yes',       'Skip prompts and install all tools automatically')
   .option('--dry-run',       'Show what would be installed without actually installing')
+  .option('--verbose',       'Show raw install output from package manager commands')
   .option('--list',          'List all available tools grouped by category and exit')
   .option('--category <cat>','Install only tools from a specific category')
   .parse(process.argv);
@@ -212,7 +213,7 @@ async function main() {
   }
 
   // ── Step 6: Install ───────────────────────────
-  await runInstaller(os, selectedToolNames);
+  await runInstaller(os, selectedToolNames, { verbose: options.verbose });
 
   // ── Step 7: Done ──────────────────────────────
   console.log('');
