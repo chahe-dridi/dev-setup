@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CLI output snapshot tests CLI help output matches snapshot 1`] = `
+"Usage: dev-setup [options]
+
+Quickly install common developer tools on your system
+
+Options:
+  -V, --version     output the version number
+  -y, --yes         Skip prompts and install all tools automatically
+  --dry-run         Show what would be installed without actually installing
+  --list            List all available tools grouped by category and exit
+  --category <cat>  Install only tools from a specific category
+  -h, --help        display help for command
+"
+`;
+
+exports[`CLI output snapshot tests CLI list output matches snapshot 1`] = `
+"[1m[36m[39m[22m
+[1m[36m╔══════════════════════════════════╗[39m[22m
+[1m[36m║         🛠  dev-setup  🛠         ║[39m[22m
+[1m[36m║  Developer Environment Installer  ║[39m[22m
+[1m[36m╚══════════════════════════════════╝[39m[22m
+[90m  v1.0.0  ·  https://github.com/YOUR_USERNAME/dev-setup[39m
+[90m[39m
+[34m  ℹ[39m [34mAll available tools:[39m
+[34m[39m
+[1m[33m[39m[22m
+[1m[33m  📦 CORE — Essential tools every developer needs from day one[39m[22m
+[32m    ✔[39m [1mGit                           [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The world's most widely used distributed version control system — tracks every change to your code across time.[39m
+[32m    ✔[39m [1mGitHub CLI                    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       GitHub's official command-line tool — create PRs, review issues, clone repos, and manage releases without leaving your terminal.[39m
+[32m    ✔[39m [1mcurl                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A command-line HTTP client that transfers data to and from servers — the swiss army knife for testing APIs and downloading files.[39m
+[32m    ✔[39m [1mwget                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A non-interactive network file downloader that supports HTTP, HTTPS, and FTP — great for downloading large files or entire websites.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 RUNTIME — Language runtimes and version managers[39m[22m
+[32m    ✔[39m [1mNode.js (LTS)                 [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A JavaScript runtime built on Chrome's V8 engine that lets you run JavaScript server-side — comes bundled with npm, the world's largest package registry.[39m
+[32m    ✔[39m [1mNVM — Node Version Manager    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Lets you install and switch between multiple versions of Node.js on the same machine without conflicts.[39m
+[32m    ✔[39m [1mPython 3                      [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A versatile, beginner-friendly programming language used in web development, data science, machine learning, scripting, and automation.[39m
+[32m    ✔[39m [1mJava JDK 21 (LTS)             [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Oracle's long-term-support Java Development Kit — provides the compiler, runtime, and standard library for building Java applications.[39m
+[32m    ✔[39m [1m.NET SDK                      [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Microsoft's free, open-source, cross-platform framework for building web apps, desktop apps, mobile apps, games, and microservices with C# or F#.[39m
+[32m    ✔[39m [1mGo (Golang)                   [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Google's statically typed, compiled language — famous for its simplicity, fast compilation, and built-in concurrency with goroutines.[39m
+[32m    ✔[39m [1mRust                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A systems programming language focused on memory safety, zero-cost abstractions, and fearless concurrency — no garbage collector required.[39m
+[32m    ✔[39m [1mRuby                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A dynamic, expressive, object-oriented scripting language famous for its clean syntax and developer happiness.[39m
+[32m    ✔[39m [1mPHP 8                         [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A widely-used server-side scripting language that powers over 75% of the web — the backbone of WordPress, Laravel, and Symfony.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 IDE — Full-featured Integrated Development Environments[39m[22m
+[32m    ✔[39m [1mVisual Studio Code            [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Microsoft's free, lightweight, enormously popular code editor with built-in Git, IntelliSense auto-complete, a debugger, and a huge extension marketplace.[39m
+[32m    ✔[39m [1mIntelliJ IDEA Community       [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       JetBrains' powerful Java and Kotlin IDE with deep code understanding, advanced refactoring tools, built-in Maven/Gradle support, and integrated debugging.[39m
+[32m    ✔[39m [1mPyCharm Community             [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       JetBrains' dedicated Python IDE with intelligent code completion, a built-in debugger, virtual environment management, and Django/Flask support.[39m
+[32m    ✔[39m [1mWebStorm                      [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       JetBrains' JavaScript and TypeScript IDE with deep framework support for React, Vue, Angular, and Node.js — includes built-in linting and test runners.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 EDITOR — Lightweight terminal-based text editors[39m[22m
+[32m    ✔[39m [1mVim                           [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The legendary terminal-based modal text editor — edit files at keyboard speed once you learn its motion commands.[39m
+[32m    ✔[39m [1mNeovim                        [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A modernised, community-driven fork of Vim with Lua configuration, a built-in LSP client for code intelligence, async operations, and a rich plugin ecosystem.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 DEVOPS — Tools for containers, orchestration, and infrastructure[39m[22m
+[32m    ✔[39m [1mDocker                        [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A containerisation platform that packages your app and all its dependencies into a portable, isolated container that runs identically on any machine.[39m
+[32m    ✔[39m [1mkubectl — Kubernetes CLI      [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The command-line tool for controlling Kubernetes clusters — deploy apps, inspect pods, view logs, and manage cluster configuration from your terminal.[39m
+[32m    ✔[39m [1mTerraform                     [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       HashiCorp's Infrastructure as Code tool — define your entire cloud infrastructure in declarative config files and provision it with one command.[39m
+[32m    ✔[39m [1mAnsible                       [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       An agentless IT automation tool that configures servers, deploys applications, and orchestrates multi-tier workflows using human-readable YAML playbooks.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 CLOUD — Cloud provider CLIs for AWS, GCP, and Azure[39m[22m
+[32m    ✔[39m [1mAWS CLI v2                    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Amazon's official command-line interface for interacting with over 200 AWS services — manage S3, EC2, Lambda, RDS, and more from your terminal.[39m
+[32m    ✔[39m [1mGoogle Cloud CLI              [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Google's official CLI for interacting with GCP services — manage Compute Engine, Cloud Run, GKE, BigQuery, and more from the terminal.[39m
+[32m    ✔[39m [1mAzure CLI                     [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Microsoft's command-line tool for managing Azure resources — deploy apps, manage VMs, configure networking, and automate Azure workflows.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 DATABASE — Database engines and management tools[39m[22m
+[32m    ✔[39m [1mMongoDB Community             [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A leading NoSQL document database that stores data as flexible JSON-like BSON documents — scales horizontally and integrates naturally with JavaScript.[39m
+[32m    ✔[39m [1mPostgreSQL                    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A powerful, open-source relational database known for ACID compliance, advanced data types (JSON, arrays, UUID), full-text search, and excellent performance.[39m
+[32m    ✔[39m [1mMySQL                         [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The world's most popular open-source relational database — fast, reliable, and the default database for LAMP/MAMP stacks, WordPress, and many legacy apps.[39m
+[32m    ✔[39m [1mRedis                         [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       An in-memory key-value data store used as a cache, message broker, and session store — lightning-fast because all data lives in RAM.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 FRAMEWORK — Language frameworks and SDKs for building applications[39m[22m
+[32m    ✔[39m [1mAngular CLI (@angular/cli)    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The official command-line interface for Angular — scaffolds components, services, and modules, and runs the dev server, linter, and test runner with \`ng\` commands.[39m
+[32m    ✔[39m [1mCreate React App              [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Facebook's official zero-config React scaffolder — sets up Webpack, Babel, ESLint, and Jest automatically so you can start building immediately.[39m
+[32m    ✔[39m [1mVite                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A next-generation front-end build tool that uses native ES modules for near-instant dev server startup and blazing-fast Hot Module Replacement.[39m
+[32m    ✔[39m [1mNext.js (create-next-app)     [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The React framework for production — adds server-side rendering, static site generation, file-based routing, image optimisation, and API routes on top of React.[39m
+[32m    ✔[39m [1mExpress.js                    [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The minimalist, unopinionated Node.js web framework — provides routing, middleware chaining, and HTTP utilities for building REST APIs and web servers.[39m
+[32m    ✔[39m [1mSpring Boot CLI               [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       The command-line tool for bootstrapping and running Spring Boot applications — quickly scaffold new projects with chosen dependencies from your terminal.[39m
+[32m    ✔[39m [1mApache Maven                  [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Java's most widely used build automation and dependency management tool — defines project structure and third-party dependencies in a pom.xml file.[39m
+[32m    ✔[39m [1mGradle                        [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A flexible, fast build automation tool for Java, Kotlin, and Android projects — uses a Groovy or Kotlin DSL instead of verbose XML.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 CLI — Command-line utilities that improve your terminal workflow[39m[22m
+[32m    ✔[39m [1mZsh (Z Shell)                 [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       An extended Bash-compatible shell with smarter tab completion, spelling correction, glob patterns, and a highly customisable prompt.[39m
+[32m    ✔[39m [1mOh My Zsh                     [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A community-driven framework for managing Zsh configuration — includes 300+ plugins (git, docker, kubectl) and 150+ themes out of the box.[39m
+[32m    ✔[39m [1mtmux — Terminal Multiplexer   [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Splits your terminal into multiple panes, lets you create named windows, and keeps sessions alive so they survive SSH disconnects.[39m
+[32m    ✔[39m [1mhtop                          [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A colourful, interactive terminal process viewer showing CPU, memory, and process trees in real time — a massive upgrade over the plain \`top\` command.[39m
+[32m    ✔[39m [1mjq — JSON Processor           [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A lightweight, flexible command-line JSON processor — parse, filter, transform, and format JSON from API responses or log files with a simple query syntax.[39m
+[32m    ✔[39m [1mMake                          [22m [90m[[90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       A classic Unix build automation tool that reads a Makefile to run named commands — widely used as a simple project task runner.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 TESTING — Testing frameworks and code quality tools[39m[22m
+[32m    ✔[39m [1mJest                          [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Facebook's all-in-one JavaScript testing framework with a built-in test runner, assertion library, powerful mocking system, and code coverage reports.[39m
+[32m    ✔[39m [1mpytest                        [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m, [90mkali[39m[90m][39m
+[90m       Python's most popular testing framework — discovers and runs tests automatically, supports clean assertions without boilerplate, and extends via 300+ plugins.[39m
+[32m    ✔[39m [1mPostman                       [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       A GUI API platform for building, testing, documenting, and monitoring REST, GraphQL, and SOAP APIs — with a collection runner and JavaScript test scripting.[39m
+[1m[33m[39m[22m
+[1m[33m  📦 MOBILE — SDKs and tools for iOS and Android development[39m[22m
+[32m    ✔[39m [1mFlutter SDK                   [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       Google's open-source UI toolkit for building natively compiled apps for mobile, web, and desktop from a single Dart codebase.[39m
+[32m    ✔[39m [1mAndroid Studio                [22m [90m[[90mwindows[39m[90m, [90mmac[39m[90m, [90mubuntu[39m[90m][39m
+[90m       Google's official IDE for Android development — includes the Android SDK, AVD emulator, Layout Editor, APK analyser, and Gradle build system integration.[39m
+
+"
+`;
