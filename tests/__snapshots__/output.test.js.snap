@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CLI output formatting matches the --list output format 1`] = `
+"
+╔══════════════════════════════════╗
+║         🛠  dev-setup  🛠         ║
+║  Developer Environment Installer  ║
+╚══════════════════════════════════╝
+  v1.0.0  ·  https://github.com/YOUR_USERNAME/dev-setup
+
+  ℹ All available tools:
+
+
+  📦 CORE — Essential tools every developer needs from day one
+    ✔ Git                            [windows, mac, ubuntu, kali]
+       The world's most widely used distributed version control system — tracks every change to your code across time.
+    ✔ GitHub CLI                     [windows, mac, ubuntu, kali]
+       GitHub's official command-line tool — create PRs, review issues, clone repos, and manage releases without leaving your terminal.
+    ✔ curl                           [windows, mac, ubuntu, kali]
+       A command-line HTTP client that transfers data to and from servers — the swiss army knife for testing APIs and downloading files.
+    ✔ wget                           [windows, mac, ubuntu, kali]
+       A non-interactive network file downloader that supports HTTP, HTTPS, and FTP — great for downloading large files or entire websites.
+
+  📦 RUNTIME — Language runtimes and version managers
+    ✔ Node.js (LTS)                  [windows, mac, ubuntu, kali]
+       A JavaScript runtime built on Chrome's V8 engine that lets you run JavaScript server-side — comes bundled with npm, the world's largest package registry.
+    ✔ NVM — Node Version Manager     [windows, mac, ubuntu, kali]
+       Lets you install and switch between multiple versions of Node.js on the same machine without conflicts.
+    ✔ Python 3                       [windows, mac, ubuntu, kali]
+       A versatile, beginner-friendly programming language used in web development, data science, machine learning, scripting, and automation.
+    ✔ Java JDK 21 (LTS)              [windows, mac, ubuntu, kali]
+       Oracle's long-term-support Java Development Kit — provides the compiler, runtime, and standard library for building Java applications.
+    ✔ .NET SDK                       [windows, mac, ubuntu, kali]
+       Microsoft's free, open-source, cross-platform framework for building web apps, desktop apps, mobile apps, games, and microservices with C# or F#.
+    ✔ Go (Golang)                    [windows, mac, ubuntu, kali]
+       Google's statically typed, compiled language — famous for its simplicity, fast compilation, and built-in concurrency with goroutines.
+    ✔ Rust                           [windows, mac, ubuntu, kali]
+       A systems programming language focused on memory safety, zero-cost abstractions, and fearless concurrency — no garbage collector required.
+    ✔ Ruby                           [windows, mac, ubuntu, kali]
+       A dynamic, expressive, object-oriented scripting language famous for its clean syntax and developer happiness.
+    ✔ PHP 8                          [windows, mac, ubuntu, kali]
+       A widely-used server-side scripting language that powers over 75% of the web — the backbone of WordPress, Laravel, and Symfony.
+
+  📦 IDE — Full-featured Integrated Development Environments
+    ✔ Visual Studio Code             [windows, mac, ubuntu, kali]
+       Microsoft's free, lightweight, enormously popular code editor with built-in Git, IntelliSense auto-complete, a debugger, and a huge extension marketplace.
+    ✔ IntelliJ IDEA Community        [windows, mac, ubuntu]
+       JetBrains' powerful Java and Kotlin IDE with deep code understanding, advanced refactoring tools, built-in Maven/Gradle support, and integrated debugging.
+    ✔ PyCharm Community              [windows, mac, ubuntu]
+       JetBrains' dedicated Python IDE with intelligent code completion, a built-in debugger, virtual environment management, and Django/Flask support.
+    ✔ WebStorm                       [windows, mac, ubuntu]
+       JetBrains' JavaScript and TypeScript IDE with deep framework support for React, Vue, Angular, and Node.js — includes built-in linting and test runners.
+
+  📦 EDITOR — Lightweight terminal-based text editors
+    ✔ Vim                            [windows, mac, ubuntu, kali]
+       The legendary terminal-based modal text editor — edit files at keyboard speed once you learn its motion commands.
+    ✔ Neovim                         [windows, mac, ubuntu, kali]
+       A modernised, community-driven fork of Vim with Lua configuration, a built-in LSP client for code intelligence, async operations, and a rich plugin ecosystem.
+
+  📦 DEVOPS — Tools for containers, orchestration, and infrastructure
+    ✔ Docker                         [windows, mac, ubuntu, kali]
+       A containerisation platform that packages your app and all its dependencies into a portable, isolated container that runs identically on any machine.
+    ✔ kubectl — Kubernetes CLI       [windows, mac, ubuntu, kali]
+       The command-line tool for controlling Kubernetes clusters — deploy apps, inspect pods, view logs, and manage cluster configuration from your terminal.
+    ✔ Terraform                      [windows, mac, ubuntu, kali]
+       HashiCorp's Infrastructure as Code tool — define your entire cloud infrastructure in declarative config files and provision it with one command.
+    ✔ Ansible                        [mac, ubuntu, kali]
+       An agentless IT automation tool that configures servers, deploys applications, and orchestrates multi-tier workflows using human-readable YAML playbooks.
+
+  📦 CLOUD — Cloud provider CLIs for AWS, GCP, and Azure
+    ✔ AWS CLI v2                     [windows, mac, ubuntu, kali]
+       Amazon's official command-line interface for interacting with over 200 AWS services — manage S3, EC2, Lambda, RDS, and more from your terminal.
+    ✔ Google Cloud CLI               [windows, mac, ubuntu, kali]
+       Google's official CLI for interacting with GCP services — manage Compute Engine, Cloud Run, GKE, BigQuery, and more from the terminal.
+    ✔ Azure CLI                      [windows, mac, ubuntu, kali]
+       Microsoft's command-line tool for managing Azure resources — deploy apps, manage VMs, configure networking, and automate Azure workflows.
+
+  📦 DATABASE — Database engines and management tools
+    ✔ MongoDB Community              [windows, mac, ubuntu, kali]
+       A leading NoSQL document database that stores data as flexible JSON-like BSON documents — scales horizontally and integrates naturally with JavaScript.
+    ✔ PostgreSQL                     [windows, mac, ubuntu, kali]
+       A powerful, open-source relational database known for ACID compliance, advanced data types (JSON, arrays, UUID), full-text search, and excellent performance.
+    ✔ MySQL                          [windows, mac, ubuntu, kali]
+       The world's most popular open-source relational database — fast, reliable, and the default database for LAMP/MAMP stacks, WordPress, and many legacy apps.
+    ✔ Redis                          [mac, ubuntu, kali]
+       An in-memory key-value data store used as a cache, message broker, and session store — lightning-fast because all data lives in RAM.
+
+  📦 FRAMEWORK — Language frameworks and SDKs for building applications
+    ✔ Angular CLI (@angular/cli)     [windows, mac, ubuntu, kali]
+       The official command-line interface for Angular — scaffolds components, services, and modules, and runs the dev server, linter, and test runner with \`ng\` commands.
+    ✔ Create React App               [windows, mac, ubuntu, kali]
+       Facebook's official zero-config React scaffolder — sets up Webpack, Babel, ESLint, and Jest automatically so you can start building immediately.
+    ✔ Vite                           [windows, mac, ubuntu, kali]
+       A next-generation front-end build tool that uses native ES modules for near-instant dev server startup and blazing-fast Hot Module Replacement.
+    ✔ Next.js (create-next-app)      [windows, mac, ubuntu, kali]
+       The React framework for production — adds server-side rendering, static site generation, file-based routing, image optimisation, and API routes on top of React.
+    ✔ Express.js                     [windows, mac, ubuntu, kali]
+       The minimalist, unopinionated Node.js web framework — provides routing, middleware chaining, and HTTP utilities for building REST APIs and web servers.
+    ✔ Spring Boot CLI                [windows, mac, ubuntu, kali]
+       The command-line tool for bootstrapping and running Spring Boot applications — quickly scaffold new projects with chosen dependencies from your terminal.
+    ✔ Apache Maven                   [windows, mac, ubuntu, kali]
+       Java's most widely used build automation and dependency management tool — defines project structure and third-party dependencies in a pom.xml file.
+    ✔ Gradle                         [windows, mac, ubuntu, kali]
+       A flexible, fast build automation tool for Java, Kotlin, and Android projects — uses a Groovy or Kotlin DSL instead of verbose XML.
+
+  📦 CLI — Command-line utilities that improve your terminal workflow
+    ✔ Zsh (Z Shell)                  [mac, ubuntu, kali]
+       An extended Bash-compatible shell with smarter tab completion, spelling correction, glob patterns, and a highly customisable prompt.
+    ✔ Oh My Zsh                      [mac, ubuntu, kali]
+       A community-driven framework for managing Zsh configuration — includes 300+ plugins (git, docker, kubectl) and 150+ themes out of the box.
+    ✔ tmux — Terminal Multiplexer    [mac, ubuntu, kali]
+       Splits your terminal into multiple panes, lets you create named windows, and keeps sessions alive so they survive SSH disconnects.
+    ✔ htop                           [mac, ubuntu, kali]
+       A colourful, interactive terminal process viewer showing CPU, memory, and process trees in real time — a massive upgrade over the plain \`top\` command.
+    ✔ jq — JSON Processor            [windows, mac, ubuntu, kali]
+       A lightweight, flexible command-line JSON processor — parse, filter, transform, and format JSON from API responses or log files with a simple query syntax.
+    ✔ Make                           [mac, ubuntu, kali]
+       A classic Unix build automation tool that reads a Makefile to run named commands — widely used as a simple project task runner.
+
+  📦 TESTING — Testing frameworks and code quality tools
+    ✔ Jest                           [windows, mac, ubuntu, kali]
+       Facebook's all-in-one JavaScript testing framework with a built-in test runner, assertion library, powerful mocking system, and code coverage reports.
+    ✔ pytest                         [windows, mac, ubuntu, kali]
+       Python's most popular testing framework — discovers and runs tests automatically, supports clean assertions without boilerplate, and extends via 300+ plugins.
+    ✔ Postman                        [windows, mac, ubuntu]
+       A GUI API platform for building, testing, documenting, and monitoring REST, GraphQL, and SOAP APIs — with a collection runner and JavaScript test scripting.
+
+  📦 MOBILE — SDKs and tools for iOS and Android development
+    ✔ Flutter SDK                    [windows, mac, ubuntu]
+       Google's open-source UI toolkit for building natively compiled apps for mobile, web, and desktop from a single Dart codebase.
+    ✔ Android Studio                 [windows, mac, ubuntu]
+       Google's official IDE for Android development — includes the Android SDK, AVD emulator, Layout Editor, APK analyser, and Gradle build system integration.
+
+"
+`;
+
+exports[`CLI output formatting matches the CLI banner format 1`] = `
+[
+  "╔══════════════════════════════════╗",
+  "║         🛠  dev-setup  🛠         ║",
+  "║  Developer Environment Installer  ║",
+  "╚══════════════════════════════════╝",
+]
+`;
+
+exports[`CLI output formatting matches the completion message format 1`] = `
+[
+  "║      ✅  Setup Complete!          ║",
+  "╚══════════════════════════════════╝",
+  "  ℹ You may need to restart your terminal for PATH changes to take effect.",
+  "
+  Have a tool to suggest? Open an issue: https://github.com/YOUR_USERNAME/dev-setup/issues
+",
+]
+`;
