@@ -20,9 +20,11 @@ const logger = require('./logger');
  *
  * @param {{ id: string, label: string, scriptPath: string }} osInfo - OS descriptor from detectOS()
  * @param {string[]} selectedTools - Array of tool names to install (e.g. ['git', 'nodejs'])
+ * @param {{ verbose?: boolean }} [options] - Installer behavior flags
  */
-async function runInstaller(osInfo, selectedTools) {
+async function runInstaller(osInfo, selectedTools, options = {}) {
   const scriptPath = path.join(__dirname, '..', osInfo.scriptPath);
+  const stdio = options.verbose ? 'inherit' : 'pipe';
 
   logger.info(`Running installer for ${chalk.bold(osInfo.label)}`);
   logger.info(`Package manager: ${chalk.bold(osInfo.packageManager)}\n`);
@@ -41,12 +43,12 @@ async function runInstaller(osInfo, selectedTools) {
           '-ExecutionPolicy', 'Bypass',
           '-File', scriptPath,
           '-Tool', tool,
-        ], { stdio: 'pipe' });
+        ], { stdio });
       } else {
         // macOS / Linux: run shell script
         // Ensure the script is executable first
         await execa('chmod', ['+x', scriptPath]);
-        await execa('bash', [scriptPath, tool], { stdio: 'pipe' });
+        await execa('bash', [scriptPath, tool], { stdio });
       }
 
       spinner.succeed(chalk.green(`Installed: ${chalk.bold(tool)}`));

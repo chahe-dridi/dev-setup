@@ -88,6 +88,18 @@ describe('runInstaller — Windows', () => {
     expect(args).toContain('-Tool');
     expect(args).toContain('nodejs');
   });
+
+  test('uses inherited stdio when verbose mode is enabled', async () => {
+    await runInstaller(windowsOS, ['git'], { verbose: true });
+    const psCalls = execa.mock.calls.filter((c) => c[0] === 'powershell');
+    expect(psCalls[0][2]).toMatchObject({ stdio: 'inherit' });
+  });
+
+  test('uses piped stdio by default', async () => {
+    await runInstaller(windowsOS, ['git']);
+    const psCalls = execa.mock.calls.filter((c) => c[0] === 'powershell');
+    expect(psCalls[0][2]).toMatchObject({ stdio: 'pipe' });
+  });
 });
 
 // ─────────────────────────────────────────────────────────────────────────────
